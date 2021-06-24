@@ -3,15 +3,20 @@ import {
 	Card,
 	CardActions,
 	CardContent,
+	CardHeader,
 	CardMedia,
-	Button,
+	Avatar,
+	IconButton,
 	Typography,
+	Button,
 } from "@material-ui/core/";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import moment from "moment";
 import { useDispatch } from "react-redux";
-import {useHistory} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 import { deletePost } from "../../../Actions/Posts";
 import useStyles from "./styles";
@@ -21,63 +26,36 @@ const Post = ({ post, setCurrentId }) => {
 	const classes = useStyles();
 	const history = useHistory();
 
-
 	const openPost = () => history.push(`/posts/${post._id}`);
 
 	return (
-		<Card className={classes.card}>
-			<CardMedia
-				className={classes.image}
-				image={
-					post.image ||
-					"default image"
+		<Card className={classes.root}>
+			<CardHeader
+				avatar={
+					<Avatar>{post.author.charAt(0)}</Avatar>
+				}
+				action={
+					<IconButton onClick={() => setCurrentId(post._id)}>
+						<MoreVertIcon />
+					</IconButton>
 				}
 				title={post.title}
+				subheader={moment(post.createdAt).fromNow()}
 			/>
-			<div className={classes.overlay}>
-				<Typography variant="h6">{post.author}</Typography>
-				<Typography variant="body2">
-					{moment(post.createdAt).fromNow()}
-				</Typography>
-			</div>
-			<div className={classes.overlay2}>
-				<Button
-					style={{ color: "white" }}
-					size="small"
-					onClick={() => setCurrentId(post._id)}
-				>
-					<MoreHorizIcon fontSize="default" />
-				</Button>
-			</div>
-			<div className={classes.details}>
-				<Typography
-					variant="body2"
-					color="textSecondary"
-					component="h2"
-				>
-					{post.category}
-				</Typography>
-			</div>
-			<Typography
-				className={classes.title}
-				gutterBottom
-				variant="h5"
-				component="h2"
-			>
-				{post.title}
-			</Typography>
+			<CardMedia
+				className={classes.image}
+				image={post.image || "default image"}
+				title={post.title}
+			/>
 			<CardContent>
+				<Typography variant="caption">#{post.category}</Typography>
 				<Typography variant="body2" color="textSecondary" component="p">
-					{(post.body).slice(0, 100).concat('...')}
+					{post.body.slice(0, 100).concat("...")}
 				</Typography>
 			</CardContent>
 			<CardActions className={classes.cardActions}>
-			<Button
-					size="small"
-					color="primary"
-					onClick={openPost}
-				>
-					Learn More
+				<Button size="small" color="primary" onClick={openPost}>
+					Read
 				</Button>
 				<Button
 					size="small"
