@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Grid, Button } from "@material-ui/core";
+import React from "react";
+import { Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import Post from "./Post/Post";
 import useStyles from "./styles";
