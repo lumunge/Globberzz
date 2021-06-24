@@ -10,13 +10,13 @@ const Form = ({ currentId, setCurrentId }) => {
 	const [postData, setPostData] = useState({
 		author: "",
 		title: "",
-		message: "",
+		body: "",
 		category: "",
 		image: "",
 	});
 	const post = useSelector((state) =>
 		currentId
-			? state.posts.find((message) => message._id === currentId)
+			? state.posts.find((body) => body._id === currentId)
 			: null
 	);
 	const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const Form = ({ currentId, setCurrentId }) => {
 		setPostData({
 			author: "",
 			title: "",
-			message: "",
+			body: "",
 			category: "",
 			image: "",
 		});
@@ -83,15 +83,15 @@ const Form = ({ currentId, setCurrentId }) => {
 					}
 				/>
 				<TextField
-					name="message"
+					name="body"
 					variant="outlined"
-					label="Message"
+					label="Body"
 					fullWidth
 					multiline
 					rows={4}
-					value={postData.message}
+					value={postData.body}
 					onChange={(e) =>
-						setPostData({ ...postData, message: e.target.value })
+						setPostData({ ...postData, body: e.target.value })
 					}
 				/>
 				<TextField
