@@ -11,9 +11,7 @@ import {
 	Button,
 } from "@material-ui/core/";
 import DeleteIcon from "@material-ui/icons/Delete";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -29,7 +27,7 @@ const Post = ({ post, setCurrentId }) => {
 	const openPost = () => history.push(`/posts/${post._id}`);
 
 	return (
-		<Card className={classes.root}>
+		<Card>
 			<CardHeader
 				avatar={
 					<Avatar>{post.author.charAt(0)}</Avatar>
@@ -55,7 +53,7 @@ const Post = ({ post, setCurrentId }) => {
 			</CardContent>
 			<CardActions className={classes.cardActions}>
 				<Button size="small" color="primary" onClick={openPost}>
-					Read
+					More
 				</Button>
 				<Button
 					size="small"
