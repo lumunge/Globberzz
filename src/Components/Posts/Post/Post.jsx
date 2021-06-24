@@ -55,7 +55,7 @@ const Post = ({ post, setCurrentId }) => {
 					color="textSecondary"
 					component="h2"
 				>
-					{post.tags.map((tag) => `#${tag} `)}
+					{post.category}
 				</Typography>
 			</div>
 			<Typography

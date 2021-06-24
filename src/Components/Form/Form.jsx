@@ -11,7 +11,7 @@ const Form = ({ currentId, setCurrentId }) => {
 		author: "",
 		title: "",
 		message: "",
-		tags: "",
+		category: "",
 		image: "",
 	});
 	const post = useSelector((state) =>
@@ -32,7 +32,7 @@ const Form = ({ currentId, setCurrentId }) => {
 			author: "",
 			title: "",
 			message: "",
-			tags: "",
+			category: "",
 			image: "",
 		});
 	};
@@ -95,16 +95,13 @@ const Form = ({ currentId, setCurrentId }) => {
 					}
 				/>
 				<TextField
-					name="tags"
+					name="category"
 					variant="outlined"
-					label="Tags (coma separated)"
+					label="Category"
 					fullWidth
-					value={postData.tags}
+					value={postData.category}
 					onChange={(e) =>
-						setPostData({
-							...postData,
-							tags: e.target.value.split(","),
-						})
+						setPostData({ ...postData, category: e.target.value })
 					}
 				/>
 				<div className={classes.fileInput}>

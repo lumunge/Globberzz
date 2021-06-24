@@ -12,8 +12,8 @@ import Navbar from "./Components/Navbar/Navbar";
 const App = () => {
 	return (
 		<>
-			<Navbar />
 			<BrowserRouter>
+				<Navbar />
 				<Switch>
 					<Route path="/" exact component={Home} />
 					<Route path="/posts/:id" component={PostDetails} />

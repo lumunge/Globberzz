@@ -14,6 +14,8 @@ const Home = () => {
 	}, [currentId, dispatch]);
 
     return(
+        <>
+        <br /><br />
         <Container maxWidth="lg">
         <Grow in>
             <Container>
@@ -36,6 +38,7 @@ const Home = () => {
             </Container>
         </Grow>
     </Container>
+    </>
     )
 }
 
