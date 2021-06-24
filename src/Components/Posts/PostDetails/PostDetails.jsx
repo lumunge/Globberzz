@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -14,9 +14,7 @@ const PostDetails = () => {
 
 	const classes = useStyles();
 
-	useEffect(() => {
-		dispatch(getPost(id));
-	}, [id]);
+	dispatch(getPost(id));
 
 	if (!post) return <h4>Getting post...</h4>;
 
