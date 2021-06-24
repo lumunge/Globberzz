@@ -68,7 +68,7 @@ const Post = ({ post, setCurrentId }) => {
 			</Typography>
 			<CardContent>
 				<Typography variant="body2" color="textSecondary" component="p">
-					{post.body}
+					{(post.body).slice(0, 100).concat('...')}
 				</Typography>
 			</CardContent>
 			<CardActions className={classes.cardActions}>

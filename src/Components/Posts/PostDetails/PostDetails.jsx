@@ -23,6 +23,8 @@ const PostDetails = () => {
 	console.log(post);
 
 	return (
+		<>
+		<br /><br />
 		<Container className={classes.post}>
 			<div>
 				<img
@@ -33,7 +35,7 @@ const PostDetails = () => {
 					alt={post.title}
 				/>
 			</div>
-				<div>
+				<div className={classes.postDetails}>
 					<Typography variant="h3" component="h2">
 						{post.title}
 					</Typography>
@@ -54,6 +56,7 @@ const PostDetails = () => {
 					</Typography>
 				</div>
 		</Container>
+		</>
 	);
 };
 
