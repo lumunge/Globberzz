@@ -27,7 +27,7 @@ const Post = ({ post, setCurrentId }) => {
 	return (
 		<Card className={classes.card}>
 			<CardMedia
-				className={classes.media}
+				className={classes.image}
 				image={
 					post.image ||
 					"default image"

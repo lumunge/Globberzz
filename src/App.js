@@ -1,10 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-// import { getPosts } from "./Actions/Posts";
-import useStyles from "./styles";
 import PostDetails from "./Components/Posts/PostDetails/PostDetails";
 import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";

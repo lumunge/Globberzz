@@ -20,8 +20,6 @@ const PostDetails = () => {
 
 	if (!post) return null;
 
-	console.log(post);
-
 	return (
 		<>
 		<br /><br />
