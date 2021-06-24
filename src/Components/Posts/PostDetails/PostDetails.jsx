@@ -18,7 +18,7 @@ const PostDetails = () => {
 		dispatch(getPost(id));
 	}, [id]);
 
-	if (!post) return null;
+	if (!post) return <h4>Getting post...</h4>;
 
 	return (
 		<>
